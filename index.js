@@ -11,6 +11,8 @@ module.exports = bot;
 const ascii = require('ascii-table');
 const table = new ascii("Commands");
 table.setHeading("Command", "Load Status");
+bot.commands = new Discord.Collection();
+const commandFolders = readdirSync('./commands');
 for (const folder of commandFolders) {
     const commandFiles = readdirSync(`./commands/${folder}`).filter(file => file.endsWith(".js"));
     for (const file of commandFiles) {
