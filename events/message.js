@@ -7,7 +7,7 @@ const { prefix } = require('../config.json');
 bot.on('message', async message => {
             if (message.mentions.users.first()) {
                 if (message.mentions.users.first().id === bot.user.id) {
-                    return message.channel.send(`My prefix for ${message.guild.name} is **${prefix}**`);
+                    return message.channel.send(`My prefix is **${prefix}**`);
                 }
             }
 

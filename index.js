@@ -3,9 +3,19 @@ const bot = new Discord.Client();
 
 const { token } = require('./config.json');
 
+const { MongoDB } = require('./config.json');
+
 const { readdirSync } = require('fs');
 
 module.exports = bot;
+
+//!-----------------------------------------------------MongoDB Connection
+const mongoose = require('mongoose');
+mongoose.connect(MongoDB, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindAndModify: false
+}).then(console.log('Connected to MongoDB successfully!')).catch(console.error);
 
 //!------------------------------------------------------Command Handler
 const ascii = require('ascii-table');
