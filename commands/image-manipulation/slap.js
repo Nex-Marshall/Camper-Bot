@@ -6,7 +6,7 @@ module.exports = {
     name: 'slap',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi slap [user]',
+    usage: 'c!slap [user]',
     description: 'Shows a slapping image of the mentioned user',
     userPermissions: [],
     botPermissions: [],

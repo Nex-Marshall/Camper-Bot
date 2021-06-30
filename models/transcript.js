@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 let Schema = new mongoose.Schema({
     AuthorID: String,
-    Content: String
+    Content: Array
 })
 
 
-module.exports = mongoose.model('modmail-transcripts', Schema);
+module.exports = mongoose.model('transcripts', Schema);

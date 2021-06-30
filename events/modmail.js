@@ -1,6 +1,6 @@
 const bot = require('../index');
 const { Client, Message, MessageEmbed, MessageAttachment } = require('discord.js');
-const db = require('../models/transcript');
+const db = require('../models/transcript.js');
 const fs = require('fs');
 const { prefix } = require('../config.json');
 const { setTimeout } = require('timers');
@@ -20,10 +20,10 @@ bot.on('message', async(message) => {
 
     if (message.channel.type === 'dm') {
         checkAndSave(message)
-        const checkChannel = !!mainGuild.channels.cache.find(ch => ch.name === message.author.username);
+        const checkChannel = !!mainGuild.channels.cache.find(ch => ch.name === message.author.id);
 
         if (checkChannel === true) {
-            const mailChannel = await mainGuild.channels.cache.find(ch => ch.name === message.author.username);
+            const mailChannel = await mainGuild.channels.cache.find(ch => ch.name === message.author.id);
 
             if (message.attachments && message.content === '') {
                 mailChannel.send(new MessageEmbed()
@@ -41,7 +41,7 @@ bot.on('message', async(message) => {
                 )
             }
         } else if (checkChannel === false) {
-            const mailChannel = await mainGuild.channels.create(message.author.username, {
+            const mailChannel = await mainGuild.channels.create(message.author.id, {
                 type: 'text',
                 parent: mainCategory,
                 permissionOverwrites: [{
@@ -100,8 +100,25 @@ bot.on('message', async(message) => {
                 } else {
                     data.Content.push(`${message.author.tag} : ${message.content}`)
                 }
+                data.save();
             }
         })
+        const user = bot.users.cache.get(message.channel.name);
+        if (message.attachments && message.content === '') {
+            user.send(new MessageEmbed()
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                .setColor("RANDOM")
+                .setImage(message.attachments.first().proxyURL)
+                .setTimestamp()
+            )
+        } else {
+            user.send(new MessageEmbed()
+                .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+                .setColor("RANDOM")
+                .setDescription(message.content)
+                .setTimestamp()
+            )
+        }
     }
 });
 

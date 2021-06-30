@@ -6,7 +6,7 @@ module.exports = {
     name: 'wanted',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi wanted [user]',
+    usage: 'c!wanted [user]',
     description: 'Shows a wanted image of the mentioned user',
     userPermissions: [],
     botPermissions: [],

@@ -6,7 +6,7 @@ module.exports = {
     name: 'trigger',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi trigger [user]',
+    usage: 'c!trigger [user]',
     description: 'Shows a triggered image of the mentioned user',
     userPermissions: [],
     botPermissions: [],

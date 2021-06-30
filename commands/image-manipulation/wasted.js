@@ -6,7 +6,7 @@ module.exports = {
     name: 'wasted',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi wasted [user]',
+    usage: 'c!wasted [user]',
     description: 'Shows a wasted image of the mentioned user',
     userPermissions: [],
     botPermissions: [],

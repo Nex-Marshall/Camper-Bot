@@ -4,7 +4,7 @@ module.exports = {
     name: 'deny-suggestion',
     aliases: [],
     // cooldown: ,
-    usage: 'izumi deny-suggestion [message_ID] [reason]',
+    usage: 'c!deny-suggestion [message_ID] [reason]',
     description: 'Denies a suggestion',
     userPermissions: ["MANAGE_MESSAGES"],
 

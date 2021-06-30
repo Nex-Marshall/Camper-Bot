@@ -4,7 +4,7 @@ module.exports = {
     name: 'accept-suggestion',
     aliases: [],
     // cooldown: ,
-    usage: 'izumi accept-suggestion [message_ID] [reason]',
+    usage: 'c!accept-suggestion [message_ID] [reason]',
     description: 'Accepts a suggestion',
     userPermissions: ["MANAGE_MESSAGES"],
 

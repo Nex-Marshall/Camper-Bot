@@ -6,7 +6,7 @@ module.exports = {
     name: 'spank',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi spank [user]',
+    usage: 'c!spank [user]',
     description: 'Shows a spanking image of the mentioned user',
     userPermissions: [],
     botPermissions: [],

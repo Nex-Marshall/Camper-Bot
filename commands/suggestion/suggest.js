@@ -5,7 +5,7 @@ module.exports = {
     name: 'suggest',
     aliases: [],
     // cooldown:  ,
-    usage: 'izumi suggest <suggestion>',
+    usage: 'c!suggest <suggestion>',
     description: 'Suggests your suggestion',
     /**
      * 
