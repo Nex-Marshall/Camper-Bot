@@ -9,6 +9,8 @@ const { readdirSync } = require('fs');
 
 module.exports = bot;
 
+bot.snipes = new Discord.Collection();
+
 //!-----------------------------------------------------MongoDB Connection
 const mongoose = require('mongoose');
 mongoose.connect(MongoDB, {
